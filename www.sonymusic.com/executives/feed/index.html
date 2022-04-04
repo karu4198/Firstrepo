@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en-US"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!--><html lang="en-US"><!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"998f751dba",applicationID:"313758205"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+        <meta name="viewport" content="width=device-width" />
+        <title>
+            Page not found - Sony Music        </title>
+        <meta name="description" content="Official Website" />
+        <meta name="keywords" content="Sony Music Entertainment" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sony Music Entertainment" />
+        <meta property="fb:app_id" content="270065846467161" />
+        <link rel="shortcut icon" href="https://www.sonymusic.com/wp-content/themes/sonymusic/inc/images/menu_icon.png" type="image/x-icon" />
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="stylesheet" type="text/css" media="all" href="" />
+        <link rel="stylesheet" type="text/css" media="all" href="https://www.sonymusic.com/wp-content/themes/sonymusic/css/main-style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" />
+        <!--[if gte IE 8]>
+                <style type="text/css">
+                        #header-block { height: 475px}
+                        #sliderblock { position: absolute; top: 0px; margin-top: 0px}
+                </style>
+        <![endif]-->
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="pingback" href="https://www.sonymusic.com/xmlrpc.php" />
+
+<!--[if lt IE 9]><script src="https://www.sonymusic.com/wp-content/themes/sonymusic/js/html5.js" type="text/javascript"></script><![endif]-->
+        <!--<script type="text/javascript">
+            (function() {
+                var e = document.createElement("script");
+                e.type = "text/javascript";
+                e.async = true;
+                e.src = "http" + (document.location.protocol === "https:" ? "s://ssl" : "://") + "tag.myplay.com/t/a/" + document.location.hostname;
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(e, s);
+            })();
+            var dontHide = "";
+        </script>-->
+        <script>
+            var dontHide = "";
+        </script>
+        <meta name='robots' content='noindex, follow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.4.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Page not found - Sony Music" />
+	<meta property="og:site_name" content="Sony Music" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.sonymusic.com/#website","url":"https://www.sonymusic.com/","name":"Sony Music","description":"Official Website","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sonymusic.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Sony Music &raquo; Feed" href="https://www.sonymusic.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sony Music &raquo; Comments Feed" href="https://www.sonymusic.com/comments/feed/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://www.sonymusic.com/wp-includes/css/dist/block-library/style.min.css?ver=db08b26c7fbfb7d29ddf7bee68b488d1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='sme_security_admin_css-css'  href='https://www.sonymusic.com/wp-content/mu-plugins/sme-security/inc/public/admin-style-7b635867.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ctf_styles-css'  href='https://www.sonymusic.com/wp-content/plugins/custom-twitter-feeds-pro/css/ctf-styles.min.css?ver=1.14' type='text/css' media='all' />
+<link rel='stylesheet' id='rg-fonts-css'  href='https://fonts.googleapis.com/css?family=Armata&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='rg-style-css'  href='https://www.sonymusic.com/wp-content/themes/sonymusic/style.css?ver=db08b26c7fbfb7d29ddf7bee68b488d1' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='rg-ie-css'  href='https://www.sonymusic.com/wp-content/themes/sonymusic/css/ie.css?ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='https://www.sonymusic.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.sonymusic.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://www.sonymusic.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sonymusic.com/xmlrpc.php?rsd" />
+
+            <!-- Google Tag Manager -->
+            <script>(function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({'gtm.start':
+                                new Date().getTime(), event: 'gtm.js'});
+                    var f = d.getElementsByTagName(s)[0],
+                            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src =
+                            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-MSD5PN');</script>
+            <!-- End Google Tag Manager -->
+            <!-- Custom Twitter Feeds CSS -->
+<style type='text/css'>
+#ctf {
+border-radius: 5px;
+padding: 20px;
+}
+.widget_custom-twitter-feeds-widget { margin-bottom: 30px; }
+</style>
+	<script type="text/javascript">
+	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+		<style type="text/css" id="wp-custom-css">
+			.singles-content a {
+	color: #ff0009;
+	text-decoration: none;
+}
+
+.newsletter {
+	display: none;
+}
+
+.newsletter.side-widget {display: none;}
+.execBox:last-child {float:left;}
+.singles-content{font: 15px/22px 'Arial', sans-serif;
+    color: #858585;}
+
+.footer-links>li:nth-child(2) {
+	display: none;
+}
+
+.singles-content ul:not(.single-title), .singles-content ol:not(.single-title) {
+		list-style: disc;
+		padding: 0 0 15px 15px;
+    font: 15px/22px 'Arial', sans-serif;
+    color: #000;
+}
+
+#ctf {
+	font-size: 12px!Important;
+}
+
+#ctf a {
+	text-decoration: none;
+}
+
+#ctf .ctf-header,
+#ctf .ctf-item {
+	border-color: #ccc;
+}
+
+#ctf .ctf-tc-summary-info {
+	color: #ccc;
+}
+
+#ctf .ctf-header-text .ctf-header-counts,
+#ctf .ctf-header .ctf-header-screenname, #ctf .ctf-header p {
+	font-size: 12px;
+}
+
+#ctf #ctf-more {
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+#custom-twitter-feeds-widget-2 {
+	margin-bottom: 30px;
+}
+
+/* PODCAST'S CSS */
+body.page-id-2354 #ctf {
+	display: none;	
+}
+body.page-id-2354 #ctf+#ctf {
+	display: block;
+}
+body:not(.page-id-2354) #ctf+#ctf {
+	display: none;
+}
+
+body:not(.page-id-2354) #sb_instagram {
+	display: none;
+}
+
+body.page-id-2354 .feat-vid,
+body.page-id-2354 .faq {
+	display: none;
+}
+
+.singles-logo.arista-records-logo {
+	background-image: url('https://cdn.smehost.net/2019sonymusiccom-smedevel/wp-content/uploads/2022/01/Arista_logo_RGB.png')!important;
+	width: 75px;
+	background-position: center center!important;
+	background-size: cover!important;
+}
+
+.rssfeed .rss-item .rss-logo.arista-records-logo {
+	background-image: url('https://cdn.smehost.net/2019sonymusiccom-smedevel/wp-content/uploads/2022/01/Arista_logo_RGB.png')!important;
+	background-position: center center!important;
+	background-size: cover!important;	
+	width: 35px;
+}
+
+h2.page-title {
+	font-weight: 900!important;
+	margin-top: 100px!important;
+}
+
+body.page-id-2354 .left {
+	width: 100%;
+	max-width: 100%;
+	float: none;
+}
+
+body.page-id-2354 #single-sidebar-block {
+	padding-top: 10px;
+	float: none;
+	max-width: 100%;
+	width: 100%;
+}
+
+#ctf #ctf-more {
+	line-height: 30px;
+}
+
+.single-executives .singles-img {
+	float: left;
+	max-width: 300px;
+	padding: 0 25px 5px 0;
+}
+
+.singles-content ol {
+	list-style: decimal!important;
+}
+
+/*:focus {
+	outline: 1px dashed #000!important;
+}*/		</style>
+		    </head>
+
+    <body class="error404 full-width custom-background-empty custom-font-enabled">
+		<a href="#main-content" class="sr-only sr-only-focusable">Skip to content</a>
+        <div id="master-container" class="bg">
+            <div id="header-block">
+                <div class="interior-nav clearfix">
+                    <div class="container clearfix">
+                        <nav class="menu-main_nav-container"><ul id="menu-main_nav" class="nav-menu"><li id="menu-item-68" class="home-logo hidetext menu-item menu-item-type-custom menu-item-object-custom menu-item-68"><a href="/">Home</a></li>
+<li id="menu-item-69" class="drop menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-69"><a href="#">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="https://www.sonymusic.com/artists/">Featured Artists</a></li>
+	<li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-433"><a href="https://www.sonymusic.com/labels/">Labels &#038; Content Divisions</a></li>
+	<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"><a href="https://www.sonymusic.com/executives/">Executives</a></li>
+	<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://www.sonymusic.com/contacts/">Contacts</a></li>
+	<li id="menu-item-3240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3240"><a href="https://giving-back.sonymusic.com/">Giving Back</a></li>
+</ul>
+</li>
+<li id="menu-item-3394" class="drop menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3394"><a href="#">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-3395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3395"><a href="https://www.sonymusic.com/inside-sony-music/">Inside Sony Music</a></li>
+	<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://www.sonymusic.com/news/">Press Releases</a></li>
+</ul>
+</li>
+<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="https://www.sonymusic.com/careers/">Careers</a></li>
+<li id="menu-item-808" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-808"><a href="https://www.sonymusic.com/faq/">FAQ</a></li>
+<li id="menu-item-3188" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3188"><a href="#">For Artists</a>
+<ul class="sub-menu">
+	<li id="menu-item-3769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3769"><a href="https://artistsforward.sonymusic.com/">Artists Forward</a></li>
+	<li id="menu-item-3772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3772"><a href="https://artisttools.sonymusic.com/">Artist Portal</a></li>
+	<li id="menu-item-3775" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3775"><a href="https://insights.sonymusic.com/">Real Time Insights</a></li>
+</ul>
+</li>
+</ul></nav>                    </div>
+                </div>
+                
+            </div><! -- #header-block -->
+
+            <div id="main-content" class="wrapper">
+                <div class="container clearfix">
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			<article id="post-0" class="post error404 no-results not-found">
+				<header class="entry-header">
+					<h1 class="entry-title">Sorry, the page you are looking for has moved or no longer exists.  </h1>
+					Please click <a href="//www.sonymusic.com" title="Go Sonymusic.com Home">here</a> to visit the homepage.
+				</header>
+			</article><!-- #post-0 -->
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+	</div><!-- .container -->
+</div><!-- #main-content -->
+
+<div id="totop">
+   <a href="" class="active">Back To Top</a>
+</div>
+
+<div id="footer-block">
+	<div class="container">
+		<ul class="new-socials">
+			<li>
+				<a href="https://www.instagram.com/sonymusic" target="_blank" aria-label="Instagram">
+					<i class="fab fa-instagram" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.tiktok.com/@sonymusic" target="_blank" aria-label="TikTok">
+					<i class="fab fa-tiktok" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://twitter.com/sonymusic" target="_blank" aria-label="Instagram">
+					<i class="fab fa-twitter" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.facebook.com/sonymusic/" target="_blank" aria-label="Instagram">
+					<i class="fab fa-facebook-f" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/company/sony-music-entertainment/" target="_blank" aria-label="LinkedIn">
+					<i class="fab fa-linkedin-in" aria-hidden="true"></i>
+				</a>
+			</li>			
+		</ul>
+		<div class="socials">
+			<a href="https://sme-artistportal.com/?ap-user-site=us&nopop=true#royalties" target="_blank" title="Sony Music Royalty Information" class="royalties extInfo">ROYALTY INFO</a>
+			<a href="http://www.sonymusic.com/copyrightinformation" target="_blank" title="Sony Music Copyright Information" class="copyright extInfo">COPYRIGHT INFO</a>
+		</div>
+		<div class="legal">
+			<p>Copyright &copy; 2022 <a href="http://www.sonymusic.com/" target="_blank">SONY MUSIC ENTERTAINMENT</a>. All Rights Reserved.</p>
+		   <ul class="footer-links">
+		     <li><a href="http://royalties.sonymusic.com/" target="_blank">Royalty Information</a><span>&nbsp;|&nbsp;</span></li>
+		     <li><a href="http://www.musicunited.org/" target="_blank">Music United</a><span>&nbsp;|&nbsp;</span></li>
+		     <li><a href="http://www.pro-music.org/" target="_blank">Pro Guide</a><span>&nbsp;|&nbsp;</span></li>
+		     <li><a href="https://copyright.sonymusic.com" target="_blank">Copyright Information</a><span>&nbsp;|&nbsp;</span></li>
+		     <li><a class="sme-privacy-exclude" href="https://www.sonymusic.com/privacy-policy/">Privacy Policy / Your Privacy Rights</a><span>&nbsp;|&nbsp;</span></li>
+			 <li><a href="https://www.sonymusic.com/how-we-use-your-data/">How We Use Your Data</a><span>&nbsp;|&nbsp;</span></li>
+			 <li><a href="https://www.sonymusic.com/ccpa-contact-form/">Do Not Sell My Personal Information</a><span>&nbsp;|&nbsp;</span></li>
+			 <li><a class="sme-privacy-exclude" href="https://www.sonymusic.com/privacy-policy/#your-california-privacy-rights">Your California Privacy Rights</a><span>&nbsp;|&nbsp;</span></li>
+		     <li><a href="https://www.sonymusic.com/terms-and-conditions/" target="_blank">Terms &amp; Conditions</a><span>&nbsp;|&nbsp;</span></li>
+		     <li class="last"><a href="https://www.sonymusic.com/feedback/" target="_blank">Send Us Feedback</a><span>&nbsp;|&nbsp;</span></li>
+		     <li class="last"><a href="http://www.whymusicmatters.com/" target="_blank">Why Music Matters</a></li>
+			 		   </ul>
+		</div>
+	</div>
+</div>
+</div>
+	</div>
+	<!-- #master-container -->
+
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSD5PN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+            <script type='text/javascript' src='https://www.sonymusic.com/wp-content/themes/sonymusic/js/jquery.fitvids.js?ver=1.0' id='rg-fitvids-js'></script>
+<script type='text/javascript' src='https://www.sonymusic.com/wp-content/themes/sonymusic/js/plugins.js?ver=1.0' id='rg-plugins-js'></script>
+<script type='text/javascript' src='https://www.sonymusic.com/wp-content/themes/sonymusic/js/scripts.js?ver=1.0' id='rg-scripts-js'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"998f751dba","applicationID":"313758205","transactionName":"ZlVUNkpWC0YCVEIMDV8fdwFMXgpbTAMGUQ==","queueTime":0,"applicationTime":266,"atts":"ShJXQAJMGEg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Page Caching using memcached (Page is 404) 
+
+Served from: www.sonymusic.com @ 2022-04-04 12:56:45 by W3 Total Cache
+-->
